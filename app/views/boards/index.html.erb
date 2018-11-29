@@ -1,8 +1,20 @@
-<h1>Boards</h1>
-<%= link_to 'New Board', new_board_path, class: "ui blue button inverted" %>
-
+<div class= "board index">
+  <div class="ui animated fade inverted grey button" tabindex="0">
+  <div class="visible content">Personal Boards</div>
+  <div class="hidden content">
+   <%= link_to 'Add Board', new_board_path %>
+  </div>
+</div> 
+</hr>
+</hr>
+ 
+<div class="ui equal width center aligned padded grid" style= "color: red;">
   <% @boards.each do |board| %>
-    <%= link_to board.name, board_path(board), class:"board"%>
-  <% end %>        
+    <div class="four wide column">
+      <div class="ui raised center aligned segment">
+        <%= link_to board.name, board_path(board), class:"board"%>    
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
